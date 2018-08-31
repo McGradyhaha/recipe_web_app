@@ -10,24 +10,21 @@ module.exports = {
     
   },
 
-  resolve:{
-    extensions:['', '.js','.jsx']
-  },
-
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
 
+  
+
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      titile: 'Output Management'
+        template: "./src/index.html"
     }),
 
     new webpack.DefinePlugin({
-        __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev') || 'false'))
+        __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'development') || 'false'))
     })
-
   ]
 };
