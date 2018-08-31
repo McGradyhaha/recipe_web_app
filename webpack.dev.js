@@ -15,9 +15,22 @@ module.exports = merge(common,{
           {
             test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
-            use: {
-              loader: 'babel-loader'
+            loader: 'babel-loader',  
+            options: {
+                cacheDirectory: true,
+                plugins: ['react-hot-loader/babel']
             }
+          },
+          {
+            test: /\.css$/,
+            use: ["style-loader", "css-loader"]
+          },
+          {
+            test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i, 
+            loader:'url-loader',
+            options:{
+                limit:8000
+            } 
           }
         ]
     },
