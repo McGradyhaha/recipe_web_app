@@ -1,10 +1,22 @@
-const merge = require("webpack-merge");
-const common = require("./webpack.common.js");
+const path = require("path");
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
-module.exports = merge(common, {
+module.exports = {
   mode: "development",
+
+  entry: {
+    app: "./src/index.js"
+  },
+
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist")
+  },
+
   devtool: "inline-source-map",
+
   devServer: {
     contentBase: "./dist",
     hot: true
@@ -36,5 +48,14 @@ module.exports = merge(common, {
     ]
   },
 
-  plugins: [new webpack.HotModuleReplacementPlugin()]
-});
+  plugins: [
+    new CleanWebpackPlugin(["dist"]),
+    new HtmlWebpackPlugin({ template:"./public/index.html" }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      __DEV__: JSON.stringify(
+        JSON.parse(process.env.NODE_ENV == "development" || "false")
+      )
+    })
+  ]
+};
