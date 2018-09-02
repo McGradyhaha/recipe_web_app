@@ -7,7 +7,7 @@ module.exports = {
   mode: "development",
 
   entry: {
-    app: "./src/index.js"
+    app: "./src/index.jsx"
   },
 
   output: {
@@ -25,14 +25,10 @@ module.exports = {
   module: {
     rules: [
       {
-        // babel is for compiling ES6, jsx to ES5
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        options: {
-          cacheDirectory: true,
-          plugins: ["react-hot-loader/babel"]
-        }
+        options: { cacheDirectory: true, plugins: ["react-hot-loader/babel"] }
       },
       {
         test: /\.css$/,
@@ -50,12 +46,13 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(["dist"]),
-    new HtmlWebpackPlugin({ template:"./public/index.html" }),
+    new HtmlWebpackPlugin({ template: "./public/index.html" }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(
         JSON.parse(process.env.NODE_ENV == "development" || "false")
       )
     })
-  ]
+  ],
+
 };
