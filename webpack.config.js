@@ -18,8 +18,16 @@ module.exports = {
   devtool: "inline-source-map",
 
   devServer: {
+    proxy: {
+      '/':{
+        target: 'http://localhost:5000',
+        secure: false
+      }
+
+    },
     contentBase: "./dist",
-    hot: true
+    hot: true,
+    inline: true
   },
 
   module: {
@@ -34,13 +42,15 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
+
       {
         test: /\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
         loader: "url-loader",
         options: {
           limit: 8000
         }
-      }
+      },
+
     ]
   },
 
