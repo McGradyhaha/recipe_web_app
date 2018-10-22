@@ -25,10 +25,11 @@ class Item extends React.Component {
                              width='200'
                         />
                     </div>
-                    <div className='text_name'>{data.name}</div>
-
+                    <a href={'#/Detail/'+ data._id.$oid} className='text_name'>
+                        {data.name}
+                    </a>
                     <div className='text'>
-                        {data.cookTime}
+                        pt: {data.cookTime}
                     </div>
                     <div className='text'>
                         {data.description}

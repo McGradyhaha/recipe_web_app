@@ -51,7 +51,7 @@ class Search extends React.Component {
 
     // loading search result
     loadData(){
-        const result = getCategory(this.props.params.id)
+        const result = getSearchResult(this.props.params.id)
         this.resultHandler(result)
 
     }

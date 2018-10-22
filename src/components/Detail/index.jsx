@@ -1,6 +1,7 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {Divider} from "antd";
+import Details from '../Detail/Detals/index.jsx'
 
 
 class DetailComponents extends React.Component {
@@ -11,27 +12,11 @@ class DetailComponents extends React.Component {
     render(){
         const data = this.props.data
         return (
-
-            <div className="list-item clear-fix">
-                <div >
-                    <div className='image'>
-                        <img src={data.image}
-                             alt={data.name}
-                             width='200'
-                        />
-                    </div>
-                    <div className='text_name'>{data.name}</div>
-
-                    <div className='text'>
-                        {data.name}
-                    </div>
-                    <div className='text'>
-                        {data.description}
-                    </div>
-                    <Divider />
-                </div>
+            <div style={{padding: 60, position: 'relative'}}>
+                {data.map((item, index) =>{
+                    return <Details key={index} data={item}/>
+                })}
             </div>
-
         )
     }
 }

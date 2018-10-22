@@ -43,9 +43,15 @@ class RightSideBar extends React.Component {
     }
 
     handleChange(value) {
-        this.state.ingredients = value.join(',')
-        console.log(this.state.ingredients)
-        console.log(value)
+        if (value.length ==1) {
+            this.state.ingredients=value[0]
+        }
+        else{
+            this.state.ingredients = value.join(',')
+            console.log(this.state.ingredients)
+            console.log(value)
+        }
+
     }
 
     searchHandler(ingredient) {

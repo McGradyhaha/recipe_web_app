@@ -10,7 +10,7 @@ class Footer extends React.Component {
     render(){
         return (
             <div>
-                <div style={{ textAlign: 'center', background: '#fff', marginTop: '500px'}}>
+                <div style={{ textAlign: 'center', background: '#fff', marginTop: '300px'}}>
                     Recipeek ©2018 Created by Recipeek Co.
                 </div>
                 

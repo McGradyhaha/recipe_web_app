@@ -35,17 +35,6 @@ class Header extends React.Component {
                          onClick={this.clickHandler.bind(this, '')}
                          style ={{cursor: 'pointer'}}
                     />
-                    <AutoComplete
-                        dataSource={this.state.suggest}
-                        style={{ width: 200 }}
-
-                        placeholder="input any one ingredient you have"
-                        filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
-                    >
-                        <Search
-                            onSearch={this.searchHandler.bind(this)}
-                        />
-                    </AutoComplete>
                     {
                         this.props.userinfo.ifLogin
                             ?<Menu.Item key="Login" onClick={this.clickHandler.bind(this, 'Login')}>Login</Menu.Item>

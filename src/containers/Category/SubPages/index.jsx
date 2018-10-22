@@ -20,12 +20,12 @@ class CatSubPage extends React.Component {
             <div style={{padding: '30px'}}>
                 {
                     this.state.loading
-                        ?<div style={{marginLeft: '550px', marginTop:'300px'}}>
+                        ?<div style={{marginLeft: '300', marginTop:'200px'}}>
                             <Spin size="large" tip="Loading Your Recipes..."/></div>
                         :<div>
                             <Breadcrumb style={{ margin: '16px 0' }}>
                                 <Breadcrumb.Item href=''>Home</Breadcrumb.Item>
-                                <Breadcrumb.Item href='#/Category'>Category</Breadcrumb.Item>
+                                <Breadcrumb.Item>Category</Breadcrumb.Item>
                                 <Breadcrumb.Item>{this.props.params.id}</Breadcrumb.Item>
 
                             </Breadcrumb>

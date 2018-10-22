@@ -1,0 +1,56 @@
+.ings2_detail{
+    /* color: #666; */
+    font-size: 20px;
+}
+
+.page-title_detail{
+    width: 100%;
+    padding: 10px 0;
+    /* border-bottom: 1px solid #f1f1f1; */
+    /* font-size: 24px;
+    line-height: 1;
+    font-weight: 900;
+    height: 25px; */
+}
+
+.text_detail{
+    margin-left: 30px;
+    color:rgb(5, 5, 5);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.cover_image_detail{
+    padding: 10px 0;
+    width:400px;
+    /* border-bottom: 1px solid #5f4f4f; */
+}
+
+.pre_time_detail{
+    font-weight:700;
+    /* color: #e9203d; */
+    color:#a7ac6c;
+    border-right:50px solid white;
+}
+.cook_time_detail{
+    font-weight:700;
+    color: #a7ac6c;
+    display:inline;
+}
+
+.head_detail{
+    color: rgb(240, 123, 45);
+    /* font-weight:700; */
+}
+
+.list-item_detail{
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.step_detail{
+    font-weight:700;
+    color: rgb(240, 123, 45);
+    font-size: 20px;
+}
