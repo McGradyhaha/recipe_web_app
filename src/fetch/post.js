@@ -9,8 +9,8 @@ export function post(url, list) {
         method: 'POST',
         credentials: 'include',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/x-ww  w-form-urlencoded'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json '
         },
         body: JSON.stringify(list)
     });

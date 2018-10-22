@@ -1,6 +1,7 @@
-import {post} from '../post.js'
+import {post} from '../../post.js'
 
 export function postRegister(list){
-    const result = post('/register', list)
+    const result = post('/users', list)
     return result
 }
+
