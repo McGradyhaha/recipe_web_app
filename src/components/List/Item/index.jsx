@@ -21,7 +21,7 @@ class Item extends React.Component {
                     <div className='image'>
                         <img src={data.image}
                              alt={data.name}
-                             onClick={this.clickHandler.bind(this, data._id)}
+                             onClick={this.clickHandler.bind(this, data._id.$oid)}
                              width='200'
                         />
                     </div>
@@ -29,6 +29,9 @@ class Item extends React.Component {
 
                     <div className='text'>
                         {data.cookTime}
+                    </div>
+                    <div className='text'>
+                        {data.description}
                     </div>
                     <Divider />
                 </div>

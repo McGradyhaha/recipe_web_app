@@ -8,14 +8,12 @@ import {getCategory} from "../../../fetch/Search/search";
 class CatSubPage extends React.Component {
     constructor(props, context) {
         super(props, context);
-        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-        super(props, context);
-        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state={
             data: [],
             size: 0,
             loading: true
         }
+        this.resultHandler = this.resultHandler.bind(this);
     }
     render(){
         return (
@@ -44,6 +42,15 @@ class CatSubPage extends React.Component {
 
     }
 
+    componentWillReceiveProps(newProps){
+        const that = this;
+        that.setState({
+            loading:true
+        })
+        console.log({newProps})
+        this.loadData();
+    }
+
     // loading search result
     loadData(){
         const result = getCategory(this.props.params.id)
@@ -53,16 +60,17 @@ class CatSubPage extends React.Component {
 
     // split result to data and size
     resultHandler(result){
+        const that = this;
         result.then(res =>{
             return res.json()
         }).then(json =>{
             console.log(json)
             const size = json.size
             const data = json.result
-
-            this.setState({
+            console.log(that);
+            that.setState({
                 size: size,
-                data: this.state.data.concat(data),
+                data,
                 loading: false
             })
         })

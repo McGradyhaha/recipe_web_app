@@ -28,14 +28,18 @@ class Header extends React.Component {
                     defaultSelectedKeys={['2']}
                     style={{ lineHeight: '100px', textAlign: 'center'}}
                 >
-                    <img alt='logo' src={logo} width="150" height="40"/>
-                    <Menu.Item key="Home" onClick={this.clickHandler.bind(this, '')}>Home</Menu.Item>
-                    <Menu.Item key="Category" onClick={this.clickHandler.bind(this, 'Category')}>Category</Menu.Item>
+                    <img alt='logo'
+                         src={logo}
+                         width="150"
+                         height="40"
+                         onClick={this.clickHandler.bind(this, '')}
+                         style ={{cursor: 'pointer'}}
+                    />
                     <AutoComplete
                         dataSource={this.state.suggest}
                         style={{ width: 200 }}
 
-                        placeholder="input here"
+                        placeholder="input any one ingredient you have"
                         filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
                     >
                         <Search

@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {Spin} from "antd";
 import {getDetails} from "../../fetch/Search/search.js";
 
+import DetailComponents from '../../components/Detail/index.jsx'
 import List from '../../components/List/index.jsx'
 
 
@@ -23,7 +24,7 @@ class Detail extends React.Component {
                     <Spin size="large" tip="Loading Your Details..."/>
                 </div>
                 :<div>
-                    <List data={this.state.data}/>
+                    <DetailComponents data={this.state.data}/>
                 </div>
         )
     }

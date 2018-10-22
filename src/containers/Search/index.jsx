@@ -6,6 +6,7 @@ import {Spin, Carousel, Button, Icon, Breadcrumb, Menu} from 'antd'
 import {hashHistory} from "react-router";
 import {getSearchResult} from "../../fetch/Search/search.js";
 import List from '../../components/List/index.jsx'
+import {getCategory} from "../../fetch/Search/search";
 
 
 class Search extends React.Component {
@@ -25,7 +26,7 @@ class Search extends React.Component {
             <div>
                 {
                     this.state.loading
-                        ?<div style={{marginLeft: '550px', marginTop:'300px'}}>
+                        ?<div style={{marginLeft: '300', marginTop:'200px'}}>
                             <Spin size="large" tip="Loading Your Recipes..."/></div>
                         :<div>
                             <div style={{padding: '30px'}}>Search Result: {this.props.params.id}</div>
@@ -34,36 +35,40 @@ class Search extends React.Component {
             </div>
         )
     }
-
     componentDidMount(){
         this.loadData()
 
     }
 
-    shouldComponentUpdate(){
-        this.loadData()
+    componentWillReceiveProps(newProps){
+        const that = this;
+        that.setState({
+            loading:true
+        })
+        console.log({newProps})
+        this.loadData();
     }
 
     // loading search result
     loadData(){
-        const result = getSearchResult(this.props.params.id)
+        const result = getCategory(this.props.params.id)
         this.resultHandler(result)
-
 
     }
 
     // split result to data and size
     resultHandler(result){
+        const that = this;
         result.then(res =>{
             return res.json()
         }).then(json =>{
             console.log(json)
             const size = json.size
             const data = json.result
-
-            this.setState({
+            console.log(that);
+            that.setState({
                 size: size,
-                data: this.state.data.concat(data),
+                data,
                 loading: false
             })
         })
