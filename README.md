@@ -4,7 +4,7 @@ clone the file from the github:
 
 1. git clone https://github.com/McGradyhaha/recipe_web_app.git
 
-2. make sure the npm works(node works)
+2. make sure the npm works (node works)
 
 3. run npm i 或者 npm install(it should automaticlly download dependencies)
 
