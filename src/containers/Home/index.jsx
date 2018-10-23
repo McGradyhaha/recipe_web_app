@@ -6,18 +6,6 @@ import {Carousel, Button, Icon} from 'antd'
 import {hashHistory} from "react-router";
 
 
-const list=[{
-    imgUrl:"http://wdlj.zoomdong.xin/neuq-gxg.png",
-    content:"2018年中国大学生程序设计竞赛欢迎你"
-},{
-    imgUrl:"http://wdlj.zoomdong.xin/neuq-zhl.png",
-    content:"相逢的人会再相逢"
-},{
-    imgUrl:"http://wdlj.zoomdong.xin/neuq-zlp.png",
-    content:"小岛美景等候多时"
-},{ imgUrl:"http://wdlj.zoomdong.xin/neuq-gxg.png",
-    content:"2018年中国大学生程序设计竞赛欢迎你"
-}]
 
 
 const divStyle = {

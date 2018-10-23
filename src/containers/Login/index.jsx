@@ -90,7 +90,7 @@ class Login extends React.Component {
             <div >
                 {
                     this.state.no_error
-                        ?<div style={{marginLeft: '500px', marginTop: '200px'}}>
+                        ?<div style={{marginLeft: '300px', marginTop: '200px'}}>
                             <Form className="login-form">
                                 <FormItem>
                                     <Input
@@ -125,7 +125,7 @@ class Login extends React.Component {
 
                             </Form>
                         </div>
-                        :<div style={{marginLeft: '500px', marginTop: '200px'}}>
+                        :<div style={{marginLeft: '300px', marginTop: '200px'}}>
 
                             <Form className="login-form">
                                 <FormItem>

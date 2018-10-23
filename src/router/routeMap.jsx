@@ -11,7 +11,7 @@ import CatSubpage from '../containers/Category/SubPages/index.jsx'
 import Ingredient from '../containers/Ingredient/index.jsx'
 import Login from '../containers/Login/index.jsx'
 import Register from '../containers/Register/index.jsx'
-
+import Favourite from '../containers/Favourite/index.jsx'
 
 
 class RouteMap extends React.Component {
@@ -31,6 +31,7 @@ class RouteMap extends React.Component {
                     <Route path='Category' component={Category}/>
                     <Route path='Category/:id' component={CatSubpage}/>
                     <Route path='Ingredient' component={Ingredient}/>
+                    <Route path='Favourite' component={Favourite}/>
                     <Route path='*' component={NotFound}/>
 
                 </Route>

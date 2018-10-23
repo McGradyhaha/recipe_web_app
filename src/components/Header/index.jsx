@@ -22,25 +22,44 @@ class Header extends React.Component {
     render(){
         return (
             <div>
-                <Menu
-                    theme="light"
-                    mode="horizontal"
-                    defaultSelectedKeys={['2']}
-                    style={{ lineHeight: '100px', textAlign: 'center'}}
-                >
-                    <img alt='logo'
-                         src={logo}
-                         width="150"
-                         height="40"
-                         onClick={this.clickHandler.bind(this, '')}
-                         style ={{cursor: 'pointer'}}
-                    />
-                    {
-                        this.props.userinfo.ifLogin
-                            ?<Menu.Item key="Login" onClick={this.clickHandler.bind(this, 'Login')}>Login</Menu.Item>
-                            :<div className='float-right'>Welcome <a href="#/User">{this.props.userinfo.username}</a>!</div>
-                    }
-                </Menu>
+                {
+                    this.props.userinfo.ifLogin
+                        ?<div>
+                            <Menu
+                                theme="light"
+                                mode="horizontal"
+                                defaultSelectedKeys={['2']}
+                                style={{ lineHeight: '100px', textAlign: 'center'}}
+                            >
+                                <img alt='logo'
+                                     src={logo}
+                                     width="150"
+                                     height="40"
+                                     onClick={this.clickHandler.bind(this, '')}
+                                     style ={{cursor: 'pointer'}}
+                                />
+                                <Menu.Item key="Login" onClick={this.clickHandler.bind(this, 'Login')}>Login</Menu.Item>
+                            </Menu>
+                        </div>
+                        :<div>
+                            <Menu
+                                theme="light"
+                                mode="horizontal"
+                                defaultSelectedKeys={['2']}
+                                style={{ lineHeight: '100px', textAlign: 'center'}}
+                            >
+                                <img alt='logo'
+                                     src={logo}
+                                     width="150"
+                                     height="40"
+                                     onClick={this.clickHandler.bind(this, '')}
+                                     style ={{cursor: 'pointer'}}
+                                />
+                                <Menu.Item key="Favourite" onClick={this.clickHandler.bind(this, 'Favourite')}>Favourite</Menu.Item>
+                                <div className='float-right'>Welcome <a href="#/User">{this.props.userinfo.username}</a>!</div>
+                            </Menu>
+                        </div>
+                }
             </div>
         )
     }

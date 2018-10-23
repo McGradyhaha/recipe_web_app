@@ -28,11 +28,11 @@ class RightSideBar extends React.Component {
     render(){
         return (
             <div className='sideMenu' style={{marginTop: '100px', fontSize: '20px'}}>
-                <p>Multiple Ingredients selector(at least 2)</p>
+                <p>Multiple Ingredients selector</p>
                 <Select
                     mode="multiple"
                     style={{ width: '100%' }}
-                    placeholder="Please select at least 2 ingredients you have"
+                    placeholder="Please select ingredients you have"
                     onChange={this.handleChange.bind(this)}
                 >
                     {children}

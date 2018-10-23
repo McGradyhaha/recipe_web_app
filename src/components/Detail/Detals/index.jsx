@@ -1,14 +1,44 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import {Divider} from "antd";
+import {Divider, Icon} from "antd";
 import './style.css'
+import {postFavourite} from "../../../fetch/User/favourite.js";
+import {hashHistory} from "react-router";
 
 
 class Details extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
+        this.state = {
+
+        }
     }
+
+    submitHandler(id){
+        const that = this
+        const dict = {
+            recipe_id: id
+        };
+        console.log("dict is ", JSON.stringify(dict))
+
+        const result = postFavourite(dict)
+        result.then(res => {
+            return res.json()
+        }).then(json => {
+            console.log(json)
+            if(json.success == true){
+                hashHistory.push('/Favourite')
+            }
+            else{
+                hashHistory.push('/Login')
+            }
+
+        })
+
+    }
+
+
     render(){
         const data = this.props.data
         return (
@@ -19,8 +49,13 @@ class Details extends React.Component {
                     <img className='cover_image_detail'
                          src={data.image}
                          alt={data.name}
+                         // style={{display:'inline'}}
                     />
+
+
                     <div className='pre_time_detail'>Prepare time: {data.prepTime}</div>
+
+
                     <Divider/>
 
                     <h2 className='head_detail'>Description</h2>
@@ -39,9 +74,21 @@ class Details extends React.Component {
                                 return <li ><p className='text_detail'>{ingredient}</p></li>})}
                         </ol>
                     </div>
+
+                    <p style={{marginLeft:'600px', display:'inline'}}>
+                        If you like, please hit me   </p>
+                    <Icon type="heart"
+                          theme="twoTone"
+                          twoToneColor="#eb2f96"
+                          style={{ display:'inline', cursor: 'pointer'}}
+                          onClick={this.submitHandler.bind(this, data._id.$oid)}
+                          />
+
+
                     <Divider/>
+
                     <h2> More Details
-                        <a href={data.url} className='text_detail'>
+                        <a href={data.url} className='text_detail' target='_blank'>
                             Please click the link: How to cook?
                         </a>
 

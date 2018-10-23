@@ -20,7 +20,7 @@ class Detail extends React.Component {
     render(){
         return (
             this.state.loading
-                ?<div style={{marginLeft: '550px', marginTop:'300px'}}>
+                ?<div style={{marginLeft: '300px', marginTop:'200px'}}>
                     <Spin size="large" tip="Loading Your Details..."/>
                 </div>
                 :<div>

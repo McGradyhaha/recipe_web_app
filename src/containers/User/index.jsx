@@ -8,7 +8,14 @@ class User extends React.Component {
     }
     render(){
         return (
-            <h1>User</h1>
+            <div>
+                <h1>User</h1>
+                <a href='/#/Favourite' className='text_detail'>
+                    Favourite
+                </a>
+            </div>
+
+
         )
     }
 }
