@@ -8,10 +8,10 @@ clone the file from the github:
 node --version: 3.5.2
 npm --version: v8.10.0
 
-3. run npm i or npm install(it should automaticlly download dependencies)
+3. run npm i or npm install(it should automaticlly download dependencies)  
    try sudo npm i if u have any permission problem
    
-4. npm start
+4. run npm start  
 open http://localhost:8080 (it should be automatically opened)
 
 
