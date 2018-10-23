@@ -96,7 +96,7 @@ class Register extends React.Component {
             <div >
                 {
                     this.state.no_error
-                        ?<div style={{marginLeft: '500px', marginTop: '100px'}}>
+                        ?<div style={{marginLeft: '300px', marginTop: '100px'}}>
                             <Form className="login-form">
                                 <FormItem>
                                     <span style ={supStyle}>Register</span>
