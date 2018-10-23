@@ -2,7 +2,7 @@
 Fast start
 clone the file from the github:
 
-1. git clone https://github.com/zuiidea/antd-admin.git
+1. git clone https://github.com/McGradyhaha/recipe_web_app.git
 
 2. make sure the npm works(node works)
 
