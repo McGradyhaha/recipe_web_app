@@ -29,7 +29,9 @@ class Search extends React.Component {
                         ?<div style={{marginLeft: '300', marginTop:'200px'}}>
                             <Spin size="large" tip="Loading Your Recipes..."/></div>
                         :<div>
-                            <div style={{padding: '30px'}}>Search Result: {this.props.params.id}</div>
+                            <div style={{padding: '30px', fontSize:'25px', fontWeight:'700'}}>
+                                Search Result: {this.props.params.id}
+                                </div>
                             <List data={this.state.data}/></div>
                 }
             </div>

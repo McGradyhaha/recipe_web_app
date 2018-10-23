@@ -37,6 +37,7 @@
     "@material-ui/core": "^3.2.2",
     "@material-ui/icons": "^3.0.1",
     "antd": "^3.9.2",
+    "disqus-react": "^1.0.5",
     "es6-promise": "^4.2.5",
     "material-ui": "^0.17.1",
     "react": "^15.3.1",

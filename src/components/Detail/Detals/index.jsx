@@ -1,10 +1,10 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import {Divider, Icon} from "antd";
+import {Divider, Icon, Rate} from "antd";
 import './style.css'
 import {postFavourite} from "../../../fetch/User/favourite.js";
 import {hashHistory} from "react-router";
-
+import Disqus from 'disqus-react';
 
 class Details extends React.Component {
     constructor(props, context) {
@@ -16,7 +16,6 @@ class Details extends React.Component {
     }
 
     submitHandler(id){
-        const that = this
         const dict = {
             recipe_id: id
         };
@@ -41,11 +40,18 @@ class Details extends React.Component {
 
     render(){
         const data = this.props.data
+        const value = parseInt(data.rating)
+        const disqusShortname = "haha"
+        const disqusConfig = {
+            identifier: data._id.$oid,
+            title: data.name,
+        };
         return (
 
             <div className="list-item clear-fix">
                 <div >
                     <h1 className='page-title_detail'>{data.name}</h1>
+
                     <img className='cover_image_detail'
                          src={data.image}
                          alt={data.name}
@@ -54,6 +60,9 @@ class Details extends React.Component {
 
 
                     <div className='pre_time_detail'>Prepare time: {data.prepTime}</div>
+                    <div>
+                        <Rate  value={value}/>
+                    </div>
 
 
                     <Divider/>
@@ -93,6 +102,15 @@ class Details extends React.Component {
                         </a>
 
                     </h2>
+                    <Divider/>
+                    <div className="article">
+
+                        <Disqus.CommentCount  config={disqusConfig} shortname={disqusShortname}>
+                            Comments
+                        </Disqus.CommentCount>
+                        <Disqus.DiscussionEmbed  config={disqusConfig} shortname={disqusShortname}/>
+
+                    </div>
 
 
 

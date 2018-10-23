@@ -1,7 +1,7 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {hashHistory} from "react-router";
-import { Divider } from 'antd';
+import { Divider, Rate} from 'antd';
 import './style.css'
 
 
@@ -14,7 +14,7 @@ class Item extends React.Component {
 
     render(){
         const data = this.props.data
-
+        const value = parseInt(data.rating)
         return (
             <div className="list-item clear-fix">
                 <div >
@@ -25,9 +25,13 @@ class Item extends React.Component {
                              width='200'
                         />
                     </div>
+
                     <a href={'#/Detail/'+ data._id.$oid} className='text_name'>
                         {data.name}
                     </a>
+                    <div>
+                        <Rate  value={value} disabled/>
+                    </div>
                     <div className='text'>
                         pt: {data.cookTime}
                     </div>
