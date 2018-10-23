@@ -1,5 +1,5 @@
 # recipe_web_app
-Fast start
+### Fast start
 clone the file from the github:
 
 1. git clone https://github.com/McGradyhaha/recipe_web_app.git
